@@ -1,0 +1,67 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Helvetica;
+}
+#coverart {
+	background:url(../images/album_60x60.png) top right no-repeat;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius:3px;
+    -webkit-box-shadow: 1px 1px 3px rgba(0,0,0, 0.75);
+    float: left;
+	margin: 0 10px 10px 10px;
+}
+#songtitle {
+	margin: 10px 10px 2px 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 400px;
+	min-height: 13px;
+	font-size:13px;
+    font-weight:bold;
+    color:#000000;
+}
+#artist {
+	margin:0 10px 2px 0;
+	z-index: 102;
+	min-height: 12px;
+	font-size:12px;
+    font-weight:normal;
+    color:#666666;
+    overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#album {
+	margin:0 10px 2px 0;
+	font-style: italic;
+	z-index: 103;
+	min-height: 11px;
+	font-size:11px;
+    font-weight:normal;
+    font-style:italic;
+    color:#666666;
+    overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#domain {
+	margin: 0 10px 10px 0;
+	font-size: 11px;
+	color:#666666;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.domainLink {
+	color: #1077C7;
+	text-decoration: none;
+}
+.domainLink:hover {
+	text-decoration: underline;
+}

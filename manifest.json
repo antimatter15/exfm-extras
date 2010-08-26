@@ -1,0 +1,24 @@
+{
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "images/ex_20x20.png",
+      "default_title": "ExtensionFM",
+      "popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "js": [ "js/jquery-1.3.2.min.js", "js/song-vo.js", "js/md5.js", "js/song-parser.js" ],
+      "matches": [ "http://*/*" ]
+   } ],
+   "description": "Turn the web into your personal music library.",
+   "icons": {
+      "128": "images/exfm_128x128.png",
+      "48": "images/exfm_48x48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZf0Kgm15acSlPit9efbVz+xwmhM+j7epTg3pFuNvNaU4GtdHdol/CrkuoCO0gOWTWu4bqM0oHSrw8rzALO3N12qtFbOWoLSmwHzTqMSe0PKmM8a0sE+908vvRrWX9W6GR/C56KjqeumqoUJBpPwgFBeVTH+XaDDmPs8S7RporBQIDAQAB",
+   "minimum_chrome_version": "5",
+   "name": "ExtensionFM",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "http://*/*", "unlimited_storage", "notifications" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.5.3"
+}

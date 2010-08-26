@@ -1,0 +1,408 @@
+body {
+	padding-bottom: 80px !important;
+}
+/*                                                  SINGLE PLAYER*/
+
+.exfmSinglePlayer, .exfmSinglePlayer:visited, .exfmSinglePlayer:hover, .exfmSinglePlayer:active {
+	-webkit-border-radius:5px;
+    background:url(http://static.extension.fm/mini_player_controls.png) no-repeat 10px 6px, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5a5a5a), to(#3f3f3f), color-stop(.5,#373737),color-stop(.5,#2d2d2d)) !important;
+    border: 1px solid #3b3b3b !important;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255, .3 ), 0 1px 0 rgba(0,0,0, .9) !important;
+    height:24px !important;
+    width:202px !important;
+    text-indent:30px !important;
+    line-height:25px !important;
+    text-shadow:0 -1px 0 rgba(0,0,0, .9) !important;
+    color:#dcdcdc !important;
+    font-size:11px !important;
+    font-weight:bold !important;
+    cursor: pointer !important;
+    display : block !important;
+    overflow : hidden !important;
+	white-space : nowrap !important;
+	text-overflow : ellipsis !important;
+	text-decoration : none !important;
+}
+.exfmSinglePlayer.exfmPlaying {
+	color:#fff !important;
+    border: 1px solid #666666 !important;
+    text-shadow:0 1px 0 rgba(0,0,0, .6) !important;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255, .5 ) !important;
+    background:url(http://static.extension.fm/mini_player_controls.png) no-repeat 10px -25px, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#aaa), to(#999), color-stop(.5,#8b8b8b),color-stop(.5,#808080)) !important;
+}
+.exfmSinglePlayer.exfmPaused {
+	color:#fff !important;
+    border: 1px solid #666666 !important;
+    text-shadow:0 1px 0 rgba(0,0,0, .6) !important;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255, .5 ) !important;
+    background: url(http://static.extension.fm/mini_player_controls.png) no-repeat 10px 6px, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#aaa), to(#999), color-stop(.5,#8b8b8b),color-stop(.5,#808080)) !important;
+}
+.exfmSinglePlayerDisplay {
+	display: inline-block;
+	height: 24px;
+	width: 181px;
+	background-color: #000000;
+	position: relative;
+}
+.exfmSinglePlayerProgressFront {
+	display: inline-block;
+	height: 6px;
+	width: 0;
+	-webkit-border-radius: 5px;
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	background-color: #FFFFFF;
+}
+.exfmSinglePlayerProgressBack {
+	display: inline-block;
+	height: 6px;
+	width: 161px;
+	border: 1px solid #FFFFFF;
+	-webkit-border-radius: 5px;
+	position: absolute;
+	top: 8px;
+	left: 10px;
+}
+/*                                                  BOTTOM*/
+#exfmBottom {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 76px;
+	z-index: 9999999999;
+  	-webkit-transition: height 500ms ease;
+  	border-top:1px solid #2e2e2e;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4a4a4a), to(#101010), color-stop(.5,#303030),color-stop(.5,#292929));
+	-webkit-box-shadow: inset 0 1px rgba(255,255,255,.2);
+	font-family: Helvetica !important;
+}
+#exfmBottom #bottomControls {
+	position:absolute;
+    left:20px;
+    top:14px;
+    -webkit-border-radius:4px;
+    border:#101010 1px solid;
+    width:150px;
+    height:45px;
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#464646), to(#333), color-stop(.5,#242424),color-stop(.5,#1f1f1f));
+    -webkit-box-shadow:  0 1px 1px rgba(55,55,55, 0.8 ), -1px 0px 1px rgba(55,55,55, 0.8 ), 1px 0 1px rgba(55,55,55, 0.8 ), inset 0 1px 1px rgba(255,255,255, 0.1), inset 0 -1px 1px rgba(0,0,0, 0.4);
+}
+.exfmControlsButton {
+	opacity:.65;
+    width:48px;
+    display:block;
+    float:left;
+    height:45px;
+    border-left:1px solid rgba(0,0,0,.25);
+    border-right:1px solid rgba(255,255,255,.1);
+    background-repeat: no-repeat;
+    background-position: center center;
+    float:left;
+}
+.exfmControlsButton:hover, .exfmControlsButton:active {
+	opacity: 1;
+}
+#exfmPrevButton {
+	-webkit-border-radius: 0 4px 4px 0;
+    background:url(http://static.extension.fm/fwd_rew.png) no-repeat center center;
+    -webkit-transform: scaleX(-1);
+    border-left:1px solid rgba(255,255,255,.1);
+    border-right:none;
+}
+#exfmPrevButton:hover {
+	-webkit-box-shadow: inset 0 1px 1px rgba(255,255,255, 0.1);
+     background:url(http://static.extension.fm/fwd_rew.png) no-repeat center center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#666), color-stop(.5,#2f2f2f),color-stop(.5,#222222));
+}
+#exfmPrevButton:active {
+	 background:url(http://static.extension.fm/fwd_rew.png) no-repeat center center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4c4c), to(#6e6e6e), color-stop(.5,#2f2f2f),color-stop(.5,#222222));
+}
+.exfmPlaybutton {
+	background-image: url(http://static.extension.fm/play.png);
+}
+.exfmPlaybutton:hover {
+	-webkit-box-shadow: inset 0 1px 1px rgba(255,255,255, 0.1);
+    background:url(http://static.extension.fm/play.png) no-repeat center center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#444), to(#555), color-stop(.5,#2f2f2f),color-stop(.5,#222222));
+}
+.exfmPlaybutton:active {
+	background:url(http://static.extension.fm/play.png) no-repeat center center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4c4c), to(#6e6e6e), color-stop(.5,#2f2f2f),color-stop(.5,#222222));
+}
+.exfmPausebutton {
+	background-image: url(http://static.extension.fm/pause.png);
+}
+.exfmPausebutton:hover {
+	-webkit-box-shadow: inset 0 1px 1px rgba(255,255,255, 0.1);
+    background:url(http://static.extension.fm/pause.png) no-repeat center center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#444), to(#555), color-stop(.5,#2f2f2f),color-stop(.5,#222222));
+}
+.exfmPausebutton:active {
+	background:url(http://static.extension.fm/pause.png) no-repeat center center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4c4c), to(#6e6e6e), color-stop(.5,#2f2f2f),color-stop(.5,#222222));
+}
+#exfmMainPlayButton {
+	width: 50px !important;
+}
+#exfmNextButton {
+	-webkit-border-radius: 0 4px 4px 0;            
+    background: url(http://static.extension.fm/fwd_rew.png) no-repeat center center;
+    border-right:none;
+}
+#exfmNextButton:hover {
+	-webkit-box-shadow: inset 0 1px 1px rgba(255,255,255, 0.1);
+    background:url(http://static.extension.fm/fwd_rew.png) no-repeat center center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#666), color-stop(.5,#2f2f2f),color-stop(.5,#222222));
+
+}
+#exfmNextButton:active {
+	background:url(http://static.extension.fm/fwd_rew.png) no-repeat center center, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4c4c), to(#6e6e6e), color-stop(.5,#2f2f2f),color-stop(.5,#222222)); 
+}
+#exfmBottomVolume{
+	position: absolute;
+	left: 200px;
+	top: 0;
+	height: 100%;
+	width: 90px;
+}
+#exfmBottomVolumeSpeaker {
+	background-repeat: no-repeat;
+	height:19px;
+	left:0;
+	position:absolute;
+	top: 32px;
+	width: 21px;
+}
+.exfmBottomVolumeOn {
+	background-image:url(http://static.extension.fm/volume_on.png);
+}
+.exfmBottomVolumeOff {
+	background-image:url(http://static.extension.fm/volume_off.png);
+}
+input[type="range"]#exfmBottomVolumeRange::-webkit-slider-thumb {
+	-webkit-appearance:none !important;	
+	width:10px;
+	height:10px;
+	-webkit-border-radius:5px;		
+	background:-webkit-gradient(radial, 5 5, 3, 5 5, 10, from(rgba(255,255,255,0)), to(rgba(255,255,255, .5))), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999), to(#222));
+	-webkit-box-shadow:  0 2px 4px rgba(0,0,0, 0.7);
+	cursor: default !important;
+}
+input[type="range"]:hover#exfmBottomVolumeRange::-webkit-slider-thumb, .exfmVottomVolumeThumbActive::-webkit-slider-thumb {
+	background:-webkit-gradient(radial, 5 5, 3, 5 5, 10, from(rgba(255,255,255,.3)), to(rgba(255,255,255, .5))), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#999), to(#222)) !important;
+}
+input[type="range"]#exfmBottomVolumeRange {
+    -webkit-appearance:none !important;
+    width:70px;
+    height:5px;
+    position: absolute;
+    top : 36px;
+    left : 24px;
+    -webkit-border-radius:4px;
+    background:#0e0e0e;
+    -webkit-box-shadow:  0 1px 1px rgba(75,75,75, 0.8 );
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: default !important;
+}
+#exfmBottomDisplay {
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#282828), to(#050505));
+    height:55px;
+    left:336px;
+    position:absolute;
+    right:180px;
+    top:9px;
+    border:1px solid #363636;
+    border-top:1px solid #000;
+    -webkit-border-radius:5px;
+}
+#exfmBottomDisplayText {
+	position: absolute;
+	visibility: hidden;
+	left:67px;
+    right:10px;
+    top:10px;
+    font-family: Helvetica;
+}
+#exfmBottomDisplaySong {
+	font-weight: bold;
+	float: left;
+	margin-right: 10px;
+	max-width: 30%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 12px !important;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#exfmBottomDisplayArtist {
+	float: left;
+	margin-right: 10px;
+	max-width: 25%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #B3B3B3;
+	font-size: 12px !important;
+}
+#exfmBottomDisplayAlbum {
+	float: left;
+	max-width: 25%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #B3B3B3;
+	font-size: 12px !important;
+}
+#exfmBottomDisplayDomain {
+	display: block;
+	float: right;
+	max-width: 20%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-decoration: none;
+	color: #B3B3B3;
+	font-size: 12px !important;
+}
+#exfmBottomDisplayDomain:hover {
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+#exfmBottomDisplayTime {
+	font-size: 10px;
+	position: absolute;
+	top: 34px;
+	left: 60px;
+	right: 10px;
+	color: #888888;
+	font-size: 10px !important;
+	visibility: hidden;
+}
+#exfmBottomDisplayTimeCount {
+	position: absolute;
+	left: 8px;
+	text-align:center;
+	width: 32px;
+}
+#exfmBottomDisplayTimeProgress {
+	position:absolute;
+    top:3px;
+    right:38px;
+    left:45px;
+    height:8px;
+    -webkit-border-radius:4px;
+    background:#333;
+    -webkit-box-shadow:  inset 0 -1px 1px rgba(255,255,255, 0.1), inset 0 1px 1px rgba(0,0,0, 0.2);
+}
+@-webkit-keyframes progress {
+	0%   { background-position: 0 0; }
+	100% { background-position: 15px 0; }
+}
+.exfmBottomDisplayTimeProgressLoading {
+	background:url(http://static.extension.fm/progressLoader.png) repeat-x, #333 !important;
+    -webkit-animation-name: progress;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+#exfmBottomDisplayTimeProgressed {
+	position:absolute;
+    left:45px;
+    top:3px;
+    height:8px;
+    width:0;
+    -webkit-border-radius:4px;
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#6ddc3a), to(#336d18));
+}
+#exfmBottomDisplaySeekThumb {
+	position:absolute;
+    width:2px;
+    border:1px solid #eee;
+    height:10px;
+    top:1px;
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1f1f1), to(#ccc));
+    -webkit-border-radius:4px;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0, 0.4);
+}
+#exfmBottomDisplaySeekThumb:hover {
+	
+}
+#exfmBottomDisplaySeekThumb:active {
+	
+}
+#exfmBottomDisplayTimeTotal {
+	width:32px;
+    position:absolute;
+    right:0;
+    top:0;
+    text-align: center;
+}
+#exfmBottomDisplayCoverArt {
+	position: absolute;
+	background:url(http://static.extension.fm/album_45x45.png) top right no-repeat;
+    background-size: 45px 45px;
+    width:45px;
+    height:45px;
+    -webkit-border-radius:3px;
+    -webkit-box-shadow: 1px 1px 3px rgba(0,0,0, 0.75);
+    top: 5px;
+	left: 5px;
+	visibility: hidden;
+}
+#exfmBottomDisplayLogo {
+	width: 74px;
+	height: 24px;
+	background: transparent url(http://static.extension.fm/exfmLogoOff.png) no-repeat;
+	margin: 15px auto 0 auto;
+}
+#exfmMaximizePlayer {
+	z-index: 3000;
+	cursor: pointer;
+	position: absolute;
+	right: 12px;
+	top: 13px;
+	position:absolute;
+    width:21px;
+    height:20px;
+    opacity:.6;
+    background:#323232 url(http://static.extension.fm/home_icon.png) no-repeat center center;
+    border:1px solid #000;
+    -webkit-box-shadow:0 1px 1px rgba(255,255,255,.1);
+    -webkit-border-radius:3px;
+}
+#exfmMaximizePlayer:hover {
+	opacity:1;
+}
+#exfmMaximizePlayer:active {
+	
+}
+#exfmCloseMiniPlayer {
+	z-index: 3000;
+	cursor: pointer;
+	position: absolute;
+	right: 12px;
+	top: 41px;
+	position:absolute;
+    width:21px;
+    height:20px;
+    opacity:.6;
+    background:#323232 url(http://static.extension.fm/close_icon.png) no-repeat center center;
+    border:1px solid #000;
+    -webkit-box-shadow:0 1px 1px rgba(255,255,255,.1);
+    -webkit-border-radius:3px;
+}
+#exfmCloseMiniPlayer:hover {
+	opacity:1;
+}
+#exfmCloseMiniPlayer:active {
+}
+/* Spinner */
+.songinfo .downloaddiv {
+	height: 26px !important;
+}
+.songinfo .playbutton {
+	display: none !important;
+}
+/* Stereogum */
+#MP3player .playlist .mp3play_button {
+	display: none;
+}

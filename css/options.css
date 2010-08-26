@@ -1,0 +1,744 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica;
+	font-size: 14px;
+	color : #000000;
+	background: #E7E7E7;
+}
+a, a:visited, a:active {
+	color: #1077C7;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+form, .submitButton {
+	padding: 0;
+	margin: 0;
+}
+.clear {
+	clear: both;
+}
+.hidden {
+	display: none !important;
+}
+.largeInputText {
+	width:220px;
+	height:28px;
+	background:#fff;
+	border:1px solid #d2d2d3;
+	-webkit-border-radius:3px;
+	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0, .1), 0 1px 1px rgba(255,255,255, 1);
+	font-weight:bold;
+	font-size:13px;
+	color:#aaa;
+	font-family:Helvetica;
+	padding:0 10px;
+	display:block;
+	margin-bottom:10px;
+}
+.largeInputText:focus {
+	border:1px solid #888;
+	outline:none;
+	-webkit-box-shadow: 0 1px 1px rgba(255,255,255, 1);
+	color:#333;
+}
+.smallInputText {
+	width: 190px;
+	border: 1px solid #D2D2D3;
+	padding: 5px;
+	font-size: 13px;
+	display: block;
+	-webkit-border-radius: 3px;
+	margin: 0 0 10px 0;
+}
+.check {
+	background-image: url(../images/small-loader-circle.gif);
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	margin-left: 5px;
+	visibility: hidden;
+}
+.fakeLink {
+	color: #1077C7;
+	cursor: pointer;
+}
+.fakeLink:hover {
+	text-decoration: underline;
+}
+.checkbox {
+	background-image: url(../images/checkbox.png);
+	background-repeat: no-repeat;
+	text-indent: 22px;
+	cursor: pointer;
+	height: 18px;
+	line-height: 20px;
+}
+.checkboxOff {
+	background-position: 0 -54px;
+}
+.checkboxOff:hover {
+	background-position: 0 -72px;
+}
+.checkboxOn {
+	background-position: 0 0;
+}
+.checkboxOn:hover {
+	background-position: 0 -18px;
+}
+.lightbox {
+	position: fixed;
+	top : 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	opacity: .6;
+	background-color: #000000;
+	visibility: hidden;
+}
+#top {
+	height: 45px;
+	color: #FFFFFF;
+	line-height: 45px;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4a4a4a), to(#101010), color-stop(.5,#303030),color-stop(.5,#292929));
+	border-bottom: 1px solid #2e2e2e;
+	-webkit-box-shadow: inset 0 1px rgba(255,255,255,.2);
+	text-indent: 20px;
+}
+.section {
+	background:-webkit-gradient(linear, 0% 0%, 0% 25%, from(#fff), to(#f7f7f7));
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0, .15);
+    -webkit-border-radius: 8px;
+    min-height: 110px;
+    width: 725px;
+    margin: 20px 0 0 20px;
+    padding: 20px 0;
+    position: relative;
+}
+.sectionLeft {
+	width: 450px;
+	margin-left: 30px;
+}
+.sectionRight {
+	float: right;
+	width: 230px;
+	margin-right: 20px;
+}
+.sectionDescriptionHeader {
+	margin: 0 0 5px 0;
+    font-size:14px;
+    font-weight:bold;
+    color:#222;
+}
+.sectionDescriptionBody {
+	font-size:13px;
+	color:#555;
+	line-height:18px;
+}
+.subSectionDescriptionBody {
+	font-size: 12px;
+	margin-top: 20px;
+}
+.sectionHeader {
+	font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 0 0;
+    color:#222222;
+}
+.subSectionDivider {
+	height: 1px;
+	background-color: #D0D0D0;
+	border-bottom: 1px solid #FFFFFF;
+	margin: 0 10px;
+}
+.connectionSectionBody {
+	margin: 10px 20px 10px 20px;
+    position: relative;
+    height: 130px;
+    padding: 20px 20px 0 20px;
+    background:rgba(0,0,0, .03);
+    -webkit-border-radius:6px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0, .1), 0 1px 0px rgba(255,255,255, 1);
+}
+.connectionLogo {
+	position: absolute;
+	left: 20px;
+	top: 35px;
+	width: 110px;
+}
+.connectionImage {
+	position: absolute;
+	left: 135px;
+	width: 60px;
+	height: 60px;
+	background-position: center center;
+	padding: 2px;
+	background-color: #EEEEEE;
+	background-size: 60 60;
+	background-repeat: no-repeat;
+	-webkit-border-radius:3px;
+	border:1px solid #bdbdbd;
+	-webkit-box-shadow: 3px 3px 3px rgba(0,0,0, .1);
+}
+.connectionLogin {
+	position: absolute;
+	left: 230px;
+	width: 200px;
+}
+.connectionLoginButton, #accountLogout {
+	height:28px;
+	width:100px;
+	-webkit-border-radius:4px;
+	text-shadow: 0 -1px 1px rgba(0,0,0, .7);
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	font-family:Helvetica;
+	text-align:center;
+	cursor: pointer;
+	border:1px solid #5c5c5c;
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#757575), to(#666666), color-stop(.5,#626262),color-stop(.5,#5d5d5d));
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0, 1), inset 0 1px 1px rgba(255,255,255, .3), 0 1px 0px rgba(255,255,255, 1);
+    float: left;
+}
+.connectionLoginButton:hover, #accountLogout:hover {
+    background:#757575;
+    border-bottom:1px solid #666;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0, 1), inset 0 1px 1px rgba(255,255,255, .3), 0 1px 0px rgba(255,255,255, 1);
+}
+.connectionLoginButton:active, #accountLogout:active {
+    background:#5d5d5d;
+    border-bottom:1px solid #666;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0, 1), inset 0 1px 1px rgba(0,0,0, .2), 0 1px 0px rgba(255,255,255, 1);
+}
+.connectionLoggedInAs {
+	 color:#888;
+     font-size:14px;
+     margin-bottom:15px;
+}
+.connectionLoggedInAs em {
+	color:#000;
+    font-style:normal;
+    font-size:15px;
+}
+.connectionDescription {
+	float: right;
+    width: 210px;
+    font-size:13px;
+    color:#555;
+    line-height:18px;
+}
+.connectionDescription a {
+	font-weight: bold;
+}
+#lastFMLogo {
+	background: url(../images/new_lastfm_logo.png) no-repeat;
+	width: 81px;
+	height: 46px;
+}
+#lastFMImage {
+	background-image: url(../images/lastfm_user.png);
+}
+#lastFMAuthorizeButton {
+	width:110px;
+    height:28px;
+    line-height: 23px;
+	text-indent: 32px;
+	-webkit-border-radius:4px;
+	text-shadow: 0 -1px 1px rgba(0,0,0, .7);
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	font-family:Helvetica;
+	text-align:center;
+	cursor: pointer;
+	border:1px solid #5c5c5c;
+	background: url(../images/as_oauth.png) no-repeat 8px 4px, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#757575), to(#666666), color-stop(.5,#626262),color-stop(.5,#5d5d5d));
+   	-webkit-box-shadow: 0 1px 1px rgba(0,0,0, 1), inset 0 1px 1px rgba(255,255,255, .3), 0 1px 0px rgba(255,255,255, 1);
+}
+#lastFMAuthorizeButton:hover {
+	background:#757575 url(../images/as_oauth.png) no-repeat 8px 4px;
+}
+#lastFMAuthorizeButton:active {
+	 background:#5d5d5d url(../images/as_oauth.png) no-repeat 8px 4px; -webkit-box-shadow: 0 1px 1px rgba(0,0,0, 1), inset 0 1px 1px rgba(0,0,0, .2), 0 1px 0px rgba(255,255,255, 1);
+}
+#tumblrAuthorizeButton {
+	width:110px;
+    height:28px;
+    line-height: 23px;
+	text-indent: 32px;
+	-webkit-border-radius:4px;
+	text-shadow: 0 -1px 1px rgba(0,0,0, .7);
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	font-family:Helvetica;
+	text-align:center;
+	cursor: pointer;
+	border:1px solid #5c5c5c;
+	background: url(../images/tumblr_oauth.png) no-repeat 10px 4px, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#757575), to(#666666), color-stop(.5,#626262),color-stop(.5,#5d5d5d));
+   	-webkit-box-shadow: 0 1px 1px rgba(0,0,0, 1), inset 0 1px 1px rgba(255,255,255, .3), 0 1px 0px rgba(255,255,255, 1);
+   	float: left;
+}
+#tumblrAuthorizeButton:hover {
+	background:#757575 url(../images/tumblr_oauth.png) no-repeat 10px 4px;
+}
+#tumblrAuthorizeButton:active {
+	 background:#5d5d5d url(../images/tumblr_oauth.png) no-repeat 10px 4px; -webkit-box-shadow: 0 1px 1px rgba(0,0,0, 1), inset 0 1px 1px rgba(0,0,0, .2), 0 1px 0px rgba(255,255,255, 1);
+}
+#tumblrFMLogo {
+	background: url(../images/new_tumblr_logo.png) no-repeat;
+	width: 80px;
+	height: 42px;
+}
+#tumblrImage {
+	background-image: url(../images/tumblr_user.png);
+}
+#accountSectionLeft {
+	width: 375px !important;
+}
+#accountSectionBody {
+	margin-top: 10px;
+	position: relative;
+}
+.accountLoader {
+	width: 16px;
+	height: 16px;
+	background: url(../images/sync_loader.gif) no-repeat;
+	float: left;
+	margin: 6px 0 0 10px;
+	visibility: hidden;
+}
+.accountButton {
+	height:28px;
+	width:100px;
+	border:1px solid #2c6b0d;
+	-webkit-border-radius:4px;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#3cb61f), to(#3ca117), color-stop(.5,#3c9c15),color-stop(.5,#3c9413));
+	-webkit-box-shadow: inset 0 -1px 1px rgba(0,0,0, .1), inset 0 1px 1px rgba(255,255,255, .3), 0 1px 0px rgba(255,255,255, 1);
+	text-shadow: 0 -1px 1px rgba(0,0,0, .7);
+	font-weight:bold;
+	font-size:14px;
+	color:#fff;
+	font-family:Helvetica;
+	text-align:center;
+	cursor: pointer;
+	float: left;
+}
+.accountButton:hover {
+	background:#3cb61f;
+}
+.accountButton:active{
+	background:#3ca117;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0, .2), 0 1px 0px rgba(255,255,255, 1);
+}
+#accountLoggedInAs {
+	margin-bottom: 10px;
+	width: 165px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#accountLogout {
+	
+}
+#accountSync {
+	position: absolute;
+	left: 185px;
+	top: 0;
+	font-size: 13px !important;
+	color:#555;
+	line-height:18px;
+}
+#accountLastSync {
+	font-style: italic;
+}
+#accountSyncNow {
+	position: absolute;
+	left: 185px;
+	top: 20px;
+	font-size: 12px !important;
+	height: 16px;
+	color:#555;
+	text-indent: 20px;
+	background: url(../images/sync_loader.gif) no-repeat;
+	display: none;
+}
+.userCheckbox {
+	margin-right: 5px;
+}
+.userCheckboxDiv {
+	cursor: default;
+}
+#logFile {
+	margin: 40px 10px 20px 20px;
+	color: #0e68b7;
+	font-size: 12px;
+}
+#logToggle {
+    width:12px;
+    height:12px;
+    background-color: #777777;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: inset 0 1px 1px #000, 0 1px 1px #fff;
+    -webkit-border-radius:3px;
+    display:inline-block;
+    cursor:pointer;
+}
+.logTogglePlus {
+	background-image: url(../images/plus.gif);
+}
+.logTogglePlus:hover{
+	background-color: #444444 !important;
+}
+.logTogglePlus:active{
+    background-color: #000000 !important;          
+}
+.logToggleMinus {
+	background-image: url(../images/minus.gif);
+}
+.logToggleMinus:hover{
+	background-color: #444444 !important;
+}
+.logToggleMinus:active{
+    background-color: #000000 !important;          
+}
+#logToggleText {
+	display: inline-block;
+	cursor:pointer;
+	color: #222222;
+	font-weight: bold;
+	font-size: 12px;
+}
+#logShow {
+	display: none;
+	background:-webkit-gradient(linear, 0% 0%, 0% 25%, from(#fff), to(#f7f7f7));
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0, .15);
+    -webkit-border-radius: 8px;
+	width: 725px;
+	border: 1px solid #D1D1D1;
+	padding-bottom: 20px;
+	position: relative;
+	margin-top: 10px;
+	overflow: hidden;
+}
+#logText {
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 20px 20px 20px 20px;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+}
+.logItem {
+	margin: 4px;
+}
+.logItem span {
+	font-weight: bold;
+}
+#logCopy {
+	margin: 0 10px 0 20px;
+}
+#logCheck {
+	background-image: url(../images/small-loader-circle.gif);
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	margin-left: 5px;
+	visibility: hidden;
+}
+#copyTextArea {
+	position: fixed;
+	width: 1px;
+	height: 1px;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+}
+.logCopyFlash {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #1a98eb), color-stop(1.0, #0e68b7));
+}
+.searchRadioDiv {
+	display: block;
+	font-size: 12px;
+	margin-top: 10px;
+}
+#accountLogin {
+	display: inline;
+	font-size: 12px;
+	color: #0e68b7;
+	cursor: pointer;
+	margin-left: 5px;
+}
+#accountLogin:hover {
+	text-decoration: underline;	
+}
+.accountLogInCreate {
+	width: 218px;
+}
+#accountLogInCreateRight {
+	float: right;
+	color:#1077c7;            
+    font-size:12px;
+    font-weight: bold;
+    padding-top:2px;
+    text-align: right;
+    cursor: pointer;
+}
+#accountLogInCreateRight:hover {
+	text-decoration: underline;
+}
+#accountLogInCreateLeft {
+	font-size:14px;
+	font-weight: bold;
+    color:#555;
+    margin-bottom:5px;
+    margin-top:5px;
+    padding-left:5px;
+}
+#accountForm {
+	
+}
+#createAccount {
+	margin-top: 10px;
+	display: inline-block;
+	font-weight: bold;
+}
+#accountSyncImg {
+	margin: 0 0 0 4px;
+	visibility: hidden;
+}
+#dialogBox {
+	position: fixed;
+	width: 400px;
+	left: 200px;
+	top: 150px;
+	z-index: 10000;
+	-webkit-border-radius:8px;
+    background:-webkit-gradient(linear, 0% 0%, 0% 25%, from(#fff), to(#f7f7f7));
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0, .35);
+    font-size:13px;
+    color:#555;
+    line-height:18px;
+}
+#dialogBoxTop {
+	color: #FFFFFF;
+	height: 24px;
+	line-height: 20px;
+	z-index: 10001;
+	font-size:14px;
+    font-weight:bold;
+    color:#222;
+    margin: 20px 20px 5px 20px;
+}
+.dialogBoxTopCenter {
+	text-align: left;
+	margin: 0 30px;
+}
+.dialogBoxTopCenterFiller {
+	height: 10px;
+}
+#dialogBoxClose {
+	position:absolute;
+    right:8px;
+    top:8px;
+    width:21px;
+    height:20px;
+    opacity:.6;
+	background: #666 url(../images/close_icon.png) no-repeat center center;
+    border:1px solid #444;
+    -webkit-box-shadow:0 1px 1px rgba(255,255,255,.1);
+    -webkit-border-radius:4px;
+	z-index: 10002;
+	cursor: pointer;
+}
+#dialogBoxClose:hover {
+	opacity:1;
+}
+#dialogBoxClose:active {
+	opacity:1;
+    background:#4f4f4f url(../images/close_icon.png) no-repeat center center;
+    border:1px solid #000;
+}
+#dialogBoxMiddle {
+	margin: 0 20px 0 20px;
+}
+#dialogBoxBottom{
+	margin: 20px;
+	height: 30px;
+}
+.dialogBoxBottomButton {
+	float: right;
+	margin-right: 20px;
+}
+.dialogFirstSync {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 20px 0 0 0;
+	color: #222222;
+	background: url(../images/sync_loader.gif) 0 1px no-repeat;
+	text-indent: 20px;
+}
+#showSongNotification {
+	color: #555555;
+}
+#showSongNotification:hover {
+	color: #333333;
+}
+#versionNumber {
+	margin: 20px;
+	font-size: 12px;
+	color: #888888;
+}
+#errorLogEmail {
+	width: 100%;
+	background:#fff;
+	border:1px solid #d2d2d3;
+	-webkit-border-radius:3px;
+	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0, .1), 0 1px 1px rgba(255,255,255, 1);
+	font-size:13px;
+	color:#333;
+	font-family:Helvetica;
+	height:28px;
+	background:#fff;
+	padding:0 10px;
+	margin-bottom:10px;
+}
+#errorLogComments {
+	height: 100px;
+	width: 100%;
+	background:#fff;
+	border:1px solid #d2d2d3;
+	-webkit-border-radius:3px;
+	-webkit-box-shadow: inset 0 0 5px rgba(0,0,0, .1), 0 1px 1px rgba(255,255,255, 1);
+	font-size:13px;
+	color:#333;
+	font-family:Helvetica;
+	padding:10px;
+}
+.errorLogLoader {
+	width: 16px;
+	height: 16px;
+	background: url(../images/sync_loader.gif) no-repeat;
+	float: right;
+	margin: 6px 0 0 0;
+	visibility: hidden;
+}
+.notificationSectionBody {
+	margin: 10px 20px 10px 20px;
+	height: 50px;
+    position: relative;
+    padding: 20px 20px 0 20px;
+    background:rgba(0,0,0, .03);
+    -webkit-border-radius:6px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0, .1), 0 1px 0px rgba(255,255,255, 1);
+}
+/*                                                  SCROLLBARS       */
+
+/* Turn on a 16x16 scrollbar */
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+ 
+/* Turn on single button up on top, and down on bottom */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+}
+ 
+/* Turn off the down area up on top, and up area on bottom */
+::-webkit-scrollbar-button:start:increment,
+::-webkit-scrollbar-button:end:decrement {
+    display: none;
+}
+ 
+/* VERTICAL SCROLLBAR   */  
+ 
+/* Place The scroll down button at the bottom */
+::-webkit-scrollbar-button:vertical:end:increment {
+    background-image: url(../images/scroll_cntrl_dwn.png);
+}
+
+::-webkit-scrollbar-button:vertical:end:increment:active {
+    background-image: url(../images/scroll_cntrl_dwn_active.png);
+}
+ 
+/* Place The scroll up button at the up */
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background-image: url(../images/scroll_cntrl_up.png);
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement:active {
+    background-image: url(../images/scroll_cntrl_up_active.png);
+}
+ 
+/* Top area above thumb and below up button */
+::-webkit-scrollbar-track-piece:vertical:start {
+    background-image: url(../images/scroll_gutter_top.png), url(../images/scroll_gutter_mid.png);
+    background-repeat: no-repeat, repeat-y;
+}
+
+ 
+/* Bottom area below thumb and down button */
+::-webkit-scrollbar-track-piece:vertical:end {
+    background-image: url(../images/scroll_gutter_btm.png), url(../images/scroll_gutter_mid.png);
+    background-repeat: no-repeat, repeat-y;
+    background-position: bottom left, 0 0;
+}
+ 
+/* The thumb itself */
+::-webkit-scrollbar-thumb:vertical {
+   -webkit-border-image: url(../images/scrollbar-vertical-thumb.png) 7 0 7 0;
+    border-color: transparent;
+    border-width: 7px 0;
+    min-height: 15px;
+}
+
+
+/* HORIZONTAL SCROLLBAR   */ 
+
+
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background-image: url(../images/scroll_cntrl_left.png);
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement:active {
+    background-image: url(../images/scroll_cntrl_left_active.png);
+}
+ 
+/* Place The scroll up button at the up */
+::-webkit-scrollbar-button:horizontal:end:increment {
+    background-image: url(../images/scroll_cntrl_right.png);
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment:active {
+    background-image: url(../images/scroll_cntrl_right_active.png);
+}
+ 
+/* Top area above thumb and below up button */
+::-webkit-scrollbar-track-piece:horizontal:start {
+    background-image: url(../images/scroll_gutter_left.png), url(../images/scroll_gutter_mid_horizontal.png);
+    background-repeat: no-repeat, repeat-x;
+}
+
+ 
+/* Bottom area below thumb and down button */
+::-webkit-scrollbar-track-piece:horizontal:end {
+    background-image: url(../images/scroll_gutter_right.png), url(../images/scroll_gutter_mid_horizontal.png);
+    background-repeat: no-repeat, repeat-x;
+    background-position: bottom right, 0 0;
+}
+ 
+/* The thumb itself */
+::-webkit-scrollbar-thumb:horizontal {
+   -webkit-border-image: url(../images/scrollbar-horizontal-thumb.png) 0 7 0 7;
+    border-color: transparent;
+    border-width: 0 7px;
+    min-height: 15px;
+}
