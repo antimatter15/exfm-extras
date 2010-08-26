@@ -4,6 +4,73 @@ author: Dan Kantor
 requires: jquery-1.3.2, md5
 uses: song-vo
 */
+
+function guessSong(n){
+  var parts = unescape(n)
+    .replace(/^.*(music|desktop|document|video|home)/gi,'')
+    .replace(/\[[^\]]+\]/g,'')
+    .replace(/_/g,' ')
+    .replace(/[0-9]+\s*(kbps|\-)/,'')
+    .split(/[\/]/)
+    .reverse();
+    
+  var name = parts[0]
+    .replace(/\.(mp3|ogg|flac)/,'')
+    .replace(/^\s|\s$/g,'')
+    .replace(/^\d+\s*/,'');
+    
+  var artist='Unknown',album='Unknown';
+  console.log(parts);
+
+  if(/\-/.test(name)){
+    console.log('DashInName');
+    var np = name.split('-').reverse();
+    name = np[0];
+    if(np.length >= 2){
+      artist = np[1];
+    }
+    if(np.length >= 3){
+      artist = np[2];
+      album = np[1]
+    }
+    if(parts[1] && parts[2]){
+      var album = parts[2]
+        .replace(/^\s|\s$/g,'');
+      if(!album){
+        console.log('UndefinedAlbum');
+        album = parts[1]
+        .replace(/^\s|\s$/g,'');
+      }
+    }
+  }else{
+    if(parts[1]){
+      console.log('DefaultCase');
+      var album = parts[1]
+      .replace(/^\s|\s$/g,'')
+    }
+    if(parts[2]){
+      var artist = parts[2]
+        .replace(/^\s|\s$/g,'')
+        .replace(/^\d+\s*/,'');
+    }
+  }
+  if(/\-/.test(album)){
+    console.log('DashInAlbum');
+    var as = album.split('-');
+    album = as[1];
+    if(!artist){
+      artist = as[0];
+    }
+  }
+  console.log(name, 'artist',artist,'album',album);
+  return {
+    Title: name,
+    Artist: artist,
+    Album: album
+  }
+}
+
+
 if (typeof(songParser) == 'undefined'){
 	songParser = {}
 }
@@ -78,47 +145,51 @@ songParser.Parse = {
 	  		var lastIndex = a.href.lastIndexOf('.');
 	  		var sub = a.href.substr(lastIndex, 4);
 	  		if (sub == '.mp3' || sub == '.ogg'){
-	  			var songVO = new SongVO();
-	  			songVO.songtitle = jQuery(a).text();
-	  			var debugOn = false;
-				var debug = jQuery(a).attr('debug');
-				if (debug == "true"){
-					debugOn = true;
-				}
-	  			for (var k in APISettableSongVOFields){
-					var field = APISettableSongVOFields[k]['field'];
-					var type = APISettableSongVOFields[k]['type'];
-					var attr = jQuery(a).attr(field);
-					if (attr != undefined){
-						if (type == 'number'){
-							attr = parseInt(attr);
-						}
-						songVO[field] = attr;
-					}
-				}
-				if (songVO.songtitle == ""){
-					songVO.songtitle = "Unknown Title";
-					if (debugOn){
-						console.log("exfm api: no songtitle found. Using 'Unknown Title'");
-					}
-				}
-				songVO.url = a.href;
-	  			songVO.href = location.href;
-	  			songVO.description = jQuery(a).text();
-	  			songVO.key = hex_md5(a.href);
-	  			songVO.domain = location.hostname;
-	  			songVO.domainkey = hex_md5(location.hostname+a.href);
-	  			if (debugOn){
-					console.log("exfm api song object:", songVO);
-				}
-	  			mp3Links.push(songVO);
-	  			songParser.PagePlayer.position++;
-	  			jQuery(a).addClass('exfm'+songVO.domainkey);
-	  			jQuery(a).addClass('exfmSinglePlayer');
-	  			jQuery(a).attr('exfmDomainKey', songVO.domainkey);
-	  			jQuery(a).attr('exfmPosition', songParser.PagePlayer.position);
-	  			jQuery(a).click(songParser.PagePlayer.click);
-	  			songParser.PagePlayer.players.push(a);
+	  		  //possibilities: music/song
+	  		  //music/album/song
+	  		  //music/artist/
+	  		
+	  		
+	  			;(function(a){
+	  			  var handleSong = function(tags){
+	  			    console.log('handling a song');
+	  					var songVO = new SongVO();
+							songVO.url = a.href;
+							songVO.href = location.href;
+							songVO.songtitle = tags.Title || jQuery(a).text();
+							songVO.description = jQuery(a).text();
+							songVO.key = hex_md5(a.href);
+							songVO.domain = location.hostname;
+							songVO.domainkey = hex_md5(location.hostname+a.href);
+						
+							songVO.artist = tags.Artist || '';
+							songVO.album = tags.Album || '';
+						  if(tags.pictures){
+							  songVO.smallimage = tags.pictures.length?tags.pictures[0].dataURL:null;
+	  			    }
+	  			
+	  					console.log(tags, songVO);
+	  					
+	  					
+	  					mp3Links.push(songVO);
+							songParser.PagePlayer.position++;
+							jQuery(a).addClass('exfm'+songVO.domainkey);
+							jQuery(a).addClass('exfmSinglePlayer');
+							jQuery(a).attr('exfmDomainKey', songVO.domainkey);
+							jQuery(a).attr('exfmPosition', songParser.PagePlayer.position);
+							jQuery(a).click(songParser.PagePlayer.click);
+							songParser.PagePlayer.players.push(a);
+							
+							var o = {"msg" : "pageSongsMore", "sessionKey" : songParser.SessionKey, "data" : [songVO]};
+							songParser.Comm.send(o);
+	  				};
+	  				
+	  			  try{
+	  				  ID3v2.parseURL(a.href, handleSong)
+	  				}catch(err){
+              handleSong(guessSong(a.href));
+            }
+	  			})(a);
 	  		}	
 	  	}
 	  	return mp3Links;
@@ -579,6 +650,64 @@ songParser.Parse = {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*****************************************************************
 *
